@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod1
+  labels:
+    hello: world
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu:focal
+    command: ["/bin/bash"]
+    args: ["-c", "sleep infinity"]
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
